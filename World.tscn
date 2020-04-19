@@ -1,4 +1,4 @@
-[gd_scene load_steps=86 format=2]
+[gd_scene load_steps=87 format=2]
 
 [ext_resource path="res://Assets/Objects/Log_large.png" type="Texture" id=1]
 [ext_resource path="res://PlayerCharacter.gd" type="Script" id=2]
@@ -31,6 +31,7 @@
 [ext_resource path="res://gradient & curves/Fire gradient.tres" type="Gradient" id=29]
 [ext_resource path="res://Assets/Objects/Camp_tent_2.png" type="Texture" id=30]
 [ext_resource path="res://Assets/Objects/Camp_tent_1.png" type="Texture" id=31]
+[ext_resource path="res://NarrativeAudioSystem.gd" type="Script" id=32]
 [ext_resource path="res://Assets/Fire/Fire Frame 3.png" type="Texture" id=51]
 [ext_resource path="res://Assets/Fire/Logs.png" type="Texture" id=52]
 [ext_resource path="res://Assets/Fire/Fire Frame 2.png" type="Texture" id=53]
@@ -434,6 +435,10 @@ tile_data = PoolIntArray( -655353, 1, 0, -655352, 1, 0, -655351, 1, 0, -655350, 
 position = Vector2( 352, 256 )
 script = ExtResource( 58 )
 
+[node name="NarrativeAudioSystem" type="AudioStreamPlayer2D" parent="FirePlace"]
+position = Vector2( -352, -256 )
+script = ExtResource( 32 )
+
 [node name="FireParticles" type="Particles2D" parent="FirePlace"]
 position = Vector2( 1.33099, 1.17786 )
 amount = 500
@@ -466,7 +471,6 @@ __meta__ = {
 [node name="AnimatedFireSprite" type="AnimatedSprite" parent="FirePlace/fireAnimationNode"]
 z_index = 1
 frames = SubResource( 12 )
-frame = 1
 playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="FirePlace/fireAnimationNode"]
@@ -510,6 +514,7 @@ shape = SubResource( 17 )
 [node name="CharacterAnimations" type="AnimatedSprite" parent="PlayerCharacter"]
 frames = SubResource( 18 )
 animation = "idle"
+frame = 5
 playing = true
 
 [node name="Camera2D" type="Camera2D" parent="PlayerCharacter"]
