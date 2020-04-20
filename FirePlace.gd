@@ -37,7 +37,7 @@ func _on_timer_timeout():
 func addLog():
 	var fireScaleAnimation = get_node("fireAnimationNode/AnimationPlayer")
 	var currentSecond = fireScaleAnimation.get("current_animation_position")
-	fireScaleAnimation.seek(currentSecond -10,true)
+	fireScaleAnimation.seek(currentSecond -20,true)
 	newLog = true
 
 func _on_FirePlace_body_entered(body):
