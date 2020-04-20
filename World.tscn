@@ -1,4 +1,4 @@
-[gd_scene load_steps=87 format=2]
+[gd_scene load_steps=129 format=2]
 
 [ext_resource path="res://Assets/Objects/Log_large.png" type="Texture" id=1]
 [ext_resource path="res://PlayerCharacter.gd" type="Script" id=2]
@@ -32,6 +32,24 @@
 [ext_resource path="res://Assets/Objects/Camp_tent_2.png" type="Texture" id=30]
 [ext_resource path="res://Assets/Objects/Camp_tent_1.png" type="Texture" id=31]
 [ext_resource path="res://NarrativeAudioSystem.gd" type="Script" id=32]
+[ext_resource path="res://Assets/Objects/Camp_log.png" type="Texture" id=33]
+[ext_resource path="res://Assets/Objects/Camp_bench.png" type="Texture" id=34]
+[ext_resource path="res://Assets/Objects/Camp_Table.png" type="Texture" id=35]
+[ext_resource path="res://Assets/Objects/Camp_Luggage_2.png" type="Texture" id=36]
+[ext_resource path="res://Assets/Objects/Camp_Luggage_1.png" type="Texture" id=37]
+[ext_resource path="res://Assets/People/Mike/Frame 5.png" type="Texture" id=38]
+[ext_resource path="res://Assets/People/Mike/Frame 6.png" type="Texture" id=39]
+[ext_resource path="res://Assets/People/Mike/Frame 3.png" type="Texture" id=40]
+[ext_resource path="res://Assets/People/Mike/Frame 2.png" type="Texture" id=41]
+[ext_resource path="res://Assets/People/Mike/Frame 1.png" type="Texture" id=42]
+[ext_resource path="res://Assets/People/Mike/Frame 4.png" type="Texture" id=43]
+[ext_resource path="res://Assets/People/Ben/Frame 1.png" type="Texture" id=44]
+[ext_resource path="res://Assets/People/Ben/Frame 3.png" type="Texture" id=45]
+[ext_resource path="res://Assets/People/Ben/Frame 2.png" type="Texture" id=46]
+[ext_resource path="res://Assets/People/Ben/Frame 5.png" type="Texture" id=47]
+[ext_resource path="res://Assets/People/Ben/Frame 4.png" type="Texture" id=48]
+[ext_resource path="res://Assets/People/Ben/Frame 6.png" type="Texture" id=49]
+[ext_resource path="res://Assets/People/Sarah/Frame 6.png" type="Texture" id=50]
 [ext_resource path="res://Assets/Fire/Fire Frame 3.png" type="Texture" id=51]
 [ext_resource path="res://Assets/Fire/Logs.png" type="Texture" id=52]
 [ext_resource path="res://Assets/Fire/Fire Frame 2.png" type="Texture" id=53]
@@ -59,6 +77,18 @@
 [ext_resource path="res://Assets/Character/Idle/Frame 4.png" type="Texture" id=75]
 [ext_resource path="res://Assets/Character/Idle/Frame 3.png" type="Texture" id=76]
 [ext_resource path="res://Assets/Character/Walking/Frame 7.png" type="Texture" id=77]
+[ext_resource path="res://Assets/People/Lilly/Frame 2.png" type="Texture" id=78]
+[ext_resource path="res://Assets/People/Sarah/Frame 1.png" type="Texture" id=79]
+[ext_resource path="res://Assets/People/Sarah/Frame 2.png" type="Texture" id=80]
+[ext_resource path="res://Assets/People/Lilly/Frame 1.png" type="Texture" id=81]
+[ext_resource path="res://Assets/People/Lilly/Frame 3.png" type="Texture" id=82]
+[ext_resource path="res://Assets/People/Sarah/Frame 5.png" type="Texture" id=83]
+[ext_resource path="res://Assets/People/Lilly/Frame 4.png" type="Texture" id=84]
+[ext_resource path="res://Assets/People/Sarah/Frame 3.png" type="Texture" id=85]
+[ext_resource path="res://Assets/People/Sarah/Frame 4.png" type="Texture" id=86]
+[ext_resource path="res://Assets/People/Lilly/Frame 5.png" type="Texture" id=87]
+[ext_resource path="res://Assets/People/Lilly/Frame 6.png" type="Texture" id=88]
+[ext_resource path="res://Assets/Objects/Tree_4.png" type="Texture" id=89]
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends Node2D
@@ -377,11 +407,11 @@ tracks/1/keys = {
 [sub_resource type="CircleShape2D" id=15]
 radius = 102.149
 
-[sub_resource type="RectangleShape2D" id=16]
-extents = Vector2( 32, 32 )
+[sub_resource type="CircleShape2D" id=44]
+radius = 25.3035
 
 [sub_resource type="RectangleShape2D" id=17]
-extents = Vector2( 32, 32 )
+extents = Vector2( 27.7819, 23.1058 )
 
 [sub_resource type="SpriteFrames" id=18]
 animations = [ {
@@ -396,17 +426,53 @@ animations = [ {
 "speed": 15.0
 } ]
 
-[sub_resource type="CircleShape2D" id=19]
-radius = 20.8824
+[sub_resource type="OccluderPolygon2D" id=42]
+cull_mode = 2
+polygon = PoolVector2Array( -6.56018, -17.2315, -6.10828, 17.5625, 4.73657, 17.1107, 3.83289, -17.2315 )
 
-[sub_resource type="OccluderPolygon2D" id=20]
-polygon = PoolVector2Array( -23.3258, -34.8245, -13.4904, -41.279, -4.26974, -41.279, 6.48772, -37.8981, 12.3275, -28.37, 12.0201, -14.8464, 6.48772, -6.54774, -3.34767, -1.01534, -15.9493, -2.85947, -25.7847, -12.6949, -27.3215, -24.3744 )
+[sub_resource type="SpriteFrames" id=35]
+animations = [ {
+"frames": [ ExtResource( 42 ), ExtResource( 41 ), ExtResource( 40 ), ExtResource( 43 ), ExtResource( 38 ), ExtResource( 39 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
 
-[sub_resource type="CircleShape2D" id=21]
-radius = 16.0313
+[sub_resource type="OccluderPolygon2D" id=36]
+cull_mode = 1
+polygon = PoolVector2Array( -6.75555, 16.344, -12.5657, 11.2756, -14.42, 2.00412, -10.5878, -6.52562, 5.48279, -18.3931, 9.06775, -25.9339, 14.2598, -24.9449, 19.8227, -15.9207, 24.3966, -9.36884, 18.3392, -1.82806, 19.0809, 9.29773, 25.3856, 13.1299, 25.3856, 22.0305, 11.4166, 22.6486, 0.414368, 24.2557, -4.28314, 20.0526 )
 
-[sub_resource type="OccluderPolygon2D" id=22]
-polygon = PoolVector2Array( -26.7843, -3.98549, -17.9848, -11.8338, -6.33127, -12.5472, 0.565704, -6.60158, 4.13309, 1.96017, 0.327881, 12.6624, -7.75822, 17.8945, -18.6982, 17.1811, -25.5952, 11.7111, -27.9734, 2.198 )
+[sub_resource type="SpriteFrames" id=37]
+animations = [ {
+"frames": [ ExtResource( 44 ), ExtResource( 46 ), ExtResource( 45 ), ExtResource( 45 ), ExtResource( 45 ), ExtResource( 45 ), ExtResource( 48 ), ExtResource( 47 ), ExtResource( 49 ), ExtResource( 49 ), ExtResource( 49 ), ExtResource( 49 ), ExtResource( 49 ), ExtResource( 49 ), ExtResource( 49 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="OccluderPolygon2D" id=43]
+cull_mode = 1
+polygon = PoolVector2Array( 18.9254, 5.73425, 25.8844, 9.5415, 23.1497, 16.5325, 4.93115, 19.7144, -11.0797, 9.22745, -13.0544, -7.12381, -0.749023, -18.4706, 19.0304, -19.9956, 23.371, -14.1511, 15.2298, -6.91101, 16.4907, 3.73557 )
+
+[sub_resource type="SpriteFrames" id=39]
+animations = [ {
+"frames": [ ExtResource( 79 ), ExtResource( 80 ), ExtResource( 85 ), ExtResource( 85 ), ExtResource( 85 ), ExtResource( 85 ), ExtResource( 85 ), ExtResource( 85 ), ExtResource( 85 ), ExtResource( 85 ), ExtResource( 86 ), ExtResource( 83 ), ExtResource( 50 ), ExtResource( 50 ), ExtResource( 50 ), ExtResource( 50 ), ExtResource( 50 ), ExtResource( 50 ), ExtResource( 50 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="OccluderPolygon2D" id=40]
+cull_mode = 1
+polygon = PoolVector2Array( 3.15771, -19.9521, 15.1536, -11.7245, 25.3639, -5.71048, 24.9302, 9.68129, 8.48492, 17.8315, -4.90314, 13.1627, -12.7407, 2.61609, -7.81964, -10.6101 )
+
+[sub_resource type="SpriteFrames" id=41]
+animations = [ {
+"frames": [ ExtResource( 81 ), ExtResource( 78 ), ExtResource( 82 ), ExtResource( 82 ), ExtResource( 82 ), ExtResource( 82 ), ExtResource( 82 ), ExtResource( 82 ), ExtResource( 82 ), ExtResource( 84 ), ExtResource( 87 ), ExtResource( 88 ), ExtResource( 88 ), ExtResource( 88 ), ExtResource( 88 ), ExtResource( 88 ), ExtResource( 88 ), ExtResource( 88 ) ],
+"loop": true,
+"name": "default",
+"speed": 6.0
+} ]
 
 [sub_resource type="RectangleShape2D" id=23]
 extents = Vector2( 65.057, 65.1009 )
@@ -420,8 +486,32 @@ polygon = PoolVector2Array( -48.4059, 77.3262, 6.51157, 42.7328, 54.707, 75.7088
 [sub_resource type="RectangleShape2D" id=26]
 extents = Vector2( 57.0435, 82.2553 )
 
-[sub_resource type="RectangleShape2D" id=27]
+[sub_resource type="OccluderPolygon2D" id=27]
+cull_mode = 2
+polygon = PoolVector2Array( 104.771, -6.73827, 46.5161, -4.45616, 4.10699, -3.66328, -109, 0.215973, -108.809, -42.5461, 3.83206, -43.4683, 101.255, -51.4952 )
+
+[sub_resource type="RectangleShape2D" id=29]
+extents = Vector2( 110.812, 22.6134 )
+
+[sub_resource type="OccluderPolygon2D" id=30]
+polygon = PoolVector2Array( -63.4188, -17.8188, -51.7144, -17.9165, -47.4804, -47.1417, -38.1536, -46.5795, -39.7139, -18.0166, 27.6103, -18.8412, 29.259, -49.2532, 39.4377, -47.1929, 39.6154, -19.0154, 54.487, -19.188, 57.4935, -5.74353, -65.4361, -6.63892 )
+
+[sub_resource type="RectangleShape2D" id=31]
+extents = Vector2( 59.4666, 19.3521 )
+
+[sub_resource type="OccluderPolygon2D" id=32]
+polygon = PoolVector2Array( -27.947, -1.97871, 7.55524, -19.0861, 26.2687, -52.5772, 29.105, -96.9621, 50.593, -73.2828, 52.1716, -41.0776, 31.4891, -9.57695, 2.89124, 3.1537 )
+
+[sub_resource type="CircleShape2D" id=33]
+radius = 56.5373
+
+[sub_resource type="CapsuleShape2D" id=34]
+
+[sub_resource type="RectangleShape2D" id=28]
 extents = Vector2( 31.2661, 9.16997 )
+
+[sub_resource type="OccluderPolygon2D" id=46]
+polygon = PoolVector2Array( -25.3097, -4.27524, -10.9703, -12.1619, 1.57674, -1.04886, -0.215683, 13.6491, -12.0457, 17.5924, -23.8758, 4.68692 )
 
 [node name="World" type="Node2D"]
 script = SubResource( 1 )
@@ -457,10 +547,13 @@ texture = SubResource( 10 )
 texture_scale = 1.3
 color = Color( 1, 0.478431, 0.133333, 1 )
 energy = 1.7
+range_height = 1.0
 shadow_enabled = true
+shadow_color = Color( 0.0156863, 0.0470588, 0.0666667, 0 )
+shadow_buffer_size = 3000
 shadow_gradient_length = 6.0
 shadow_filter = 4
-shadow_filter_smooth = 9.6
+shadow_filter_smooth = 19.9
 __meta__ = {
 "_edit_lock_": true
 }
@@ -471,6 +564,7 @@ __meta__ = {
 [node name="AnimatedFireSprite" type="AnimatedSprite" parent="FirePlace/fireAnimationNode"]
 z_index = 1
 frames = SubResource( 12 )
+frame = 3
 playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="FirePlace/fireAnimationNode"]
@@ -488,7 +582,7 @@ texture = ExtResource( 52 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FirePlace/StaticBody2D"]
 position = Vector2( 0, -0.440125 )
-shape = SubResource( 16 )
+shape = SubResource( 44 )
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="FirePlace"]
 stream = ExtResource( 59 )
@@ -499,26 +593,36 @@ attenuation = 2.29739
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 position = Vector2( 352, 256 )
-color = Color( 0.27451, 0.27451, 0.27451, 1 )
+color = Color( 0.0784314, 0.121569, 0.152941, 1 )
 
 [node name="PlayerCharacter" type="KinematicBody2D" parent="."]
-position = Vector2( 544, 224 )
+position = Vector2( 544, 224.397 )
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerCharacter"]
+position = Vector2( 6.32617, -0.903748 )
 shape = SubResource( 17 )
 
 [node name="CharacterAnimations" type="AnimatedSprite" parent="PlayerCharacter"]
+z_index = 1
 frames = SubResource( 18 )
 animation = "idle"
-frame = 5
+frame = 2
 playing = true
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="PlayerCharacter/CharacterAnimations"]
+show_behind_parent = true
+position = Vector2( 6.12219, -1.1077 )
+rotation = 3.10665
+occluder = SubResource( 42 )
 
 [node name="Camera2D" type="Camera2D" parent="PlayerCharacter"]
 current = true
+smoothing_enabled = true
+smoothing_speed = 10.0
 drag_margin_left = 0.5
 drag_margin_top = 0.5
 drag_margin_right = 0.5
@@ -536,41 +640,100 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="People" type="Node2D" parent="."]
+position = Vector2( 423.51, 48.68 )
+rotation = 0.785398
+
+[node name="Mike" type="KinematicBody2D" parent="People"]
+position = Vector2( 148.294, 367.219 )
+rotation = -1.56509
+z_index = 1
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="People/Mike"]
+position = Vector2( 1.33698, -0.445648 )
+frames = SubResource( 35 )
+playing = true
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="People/Mike/AnimatedSprite"]
+show_behind_parent = true
+position = Vector2( -1.33698, 0.445648 )
+occluder = SubResource( 36 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="People/Mike"]
+polygon = PoolVector2Array( 18.0721, -4.16197, 24.9949, -8.85954, 23.635, -13.6807, 18.1958, -15.6586, 15.847, -21.2215, 11.0259, -26.5372, 8.30621, -23.8175, 6.5755, -18.6255, -2.44867, -11.5792, -10.3604, -5.39821, -14.069, 3.00795, -12.5855, 11.6613, -4.30298, 17.9659, -0.0999146, 22.4162, 6.20471, 23.776, 13.1274, 20.8091, 18.8139, 22.7871, 24.2532, 20.0674, 25.8602, 14.5046, 20.9154, 10.0542, 17.2068, 10.3015, 16.7123, 3.13155 )
+
+[node name="Ben" type="KinematicBody2D" parent="People"]
+position = Vector2( 244.174, 242.184 )
+rotation = -2.92646
+z_index = 1
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="People/Ben"]
+position = Vector2( 1.33698, -0.445648 )
+z_index = 1
+frames = SubResource( 37 )
+frame = 14
+playing = true
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="People/Ben/AnimatedSprite"]
+show_behind_parent = true
+position = Vector2( -0.239441, 0.205841 )
+scale = Vector2( 1, 1 )
+occluder = SubResource( 43 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="People/Ben"]
+position = Vector2( -2.25726, -3.71399 )
+polygon = PoolVector2Array( 11.3371, -18.2128, 18.4306, -16.0172, 26.642, -13.828, 26.8592, -8.42542, 18.505, -2.97388, 19.3205, 9.31995, 27.1572, 11.1386, 27.1998, 18.5919, 12.506, 23.3344, 2.82301, 24.5076, -3.54851, 18.2084, -11.0827, 4.0896, -8.72313, -6.91791, -2.03848, -11.0555, 4.25856, -17.7997 )
+
+[node name="Sarah" type="KinematicBody2D" parent="People"]
+position = Vector2( 253.267, 182.037 )
+rotation = -2.92646
+z_index = 1
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="People/Sarah"]
+position = Vector2( 1.33698, -0.445648 )
+z_index = 1
+frames = SubResource( 39 )
+frame = 7
+playing = true
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="People/Sarah/AnimatedSprite"]
+show_behind_parent = true
+position = Vector2( -1.33698, 0.445663 )
+scale = Vector2( 1, 1 )
+occluder = SubResource( 40 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="People/Sarah"]
+position = Vector2( -3.8949, -2.27127 )
+polygon = PoolVector2Array( 12.9991, -15.2916, 17.7607, -9.38881, 28.1877, -2.87967, 28.1574, 2.44293, 29.1583, 11.9883, 19.4277, 16.6098, 11.8586, 21.1931, 2.16522, 18.5377, -8.60724, 8.95787, -6.42358, -3.88712, 3.09174, -15.9474 )
+
+[node name="Lilly" type="KinematicBody2D" parent="People"]
+position = Vector2( 91.5948, 372.336 )
+rotation = -1.64581
+z_index = 1
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="People/Lilly"]
+position = Vector2( 1.33698, -0.445648 )
+frames = SubResource( 41 )
+frame = 9
+playing = true
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="People/Lilly/AnimatedSprite"]
+show_behind_parent = true
+position = Vector2( -1.33698, 0.445648 )
+rotation = 2.98023e-08
+z_as_relative = false
+occluder = SubResource( 40 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="People/Lilly"]
+position = Vector2( -3.8949, -2.27127 )
+polygon = PoolVector2Array( 12.9991, -15.2916, 17.7607, -9.38881, 28.1877, -2.87967, 28.1574, 2.44293, 29.1583, 11.9883, 19.4277, 16.6098, 11.8586, 21.1931, 2.16522, 18.5377, -8.60724, 8.95787, -6.42358, -3.88712, 3.09174, -15.9474 )
+
 [node name="Static_objects" type="Node2D" parent="."]
 position = Vector2( 423.51, 48.68 )
 rotation = 0.785398
 __meta__ = {
 "_edit_lock_": true
 }
-
-[node name="Tree_trunk" type="StaticBody2D" parent="Static_objects"]
-position = Vector2( -194.778, 420.831 )
-rotation = -0.785398
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Static_objects/Tree_trunk"]
-position = Vector2( -7.29971, -21.3152 )
-shape = SubResource( 19 )
-
-[node name="LightOccluder2D" type="LightOccluder2D" parent="Static_objects/Tree_trunk"]
-occluder = SubResource( 20 )
-
-[node name="Tree_trunk2" type="StaticBody2D" parent="Static_objects"]
-position = Vector2( -232.51, 84.4119 )
-rotation = -0.785398
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Static_objects/Tree_trunk2"]
-position = Vector2( -11.6796, 3.21187 )
-shape = SubResource( 21 )
-
-[node name="LightOccluder2D" type="LightOccluder2D" parent="Static_objects/Tree_trunk2"]
-position = Vector2( 1.50209, 0.75103 )
-occluder = SubResource( 22 )
 
 [node name="Tent_2" type="StaticBody2D" parent="Static_objects"]
 
@@ -608,6 +771,91 @@ position = Vector2( 5.05758, -24.0506 )
 rotation = -0.388172
 shape = SubResource( 26 )
 
+[node name="Trunk_seat" type="StaticBody2D" parent="Static_objects"]
+position = Vector2( 88.5331, 349.328 )
+rotation = -2.76779
+
+[node name="Camp_tent_2" type="Sprite" parent="Static_objects/Trunk_seat"]
+position = Vector2( -2.89044, -35.1558 )
+rotation = -0.3957
+texture = ExtResource( 33 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Static_objects/Trunk_seat"]
+position = Vector2( 10.4007, -14.5968 )
+rotation = -0.388172
+occluder = SubResource( 27 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Static_objects/Trunk_seat"]
+position = Vector2( -2.2544, -35.7353 )
+rotation = -0.401186
+shape = SubResource( 29 )
+
+[node name="Bench" type="StaticBody2D" parent="Static_objects"]
+position = Vector2( 289.629, 226.661 )
+rotation = -1.01812
+
+[node name="Camp_tent_2" type="Sprite" parent="Static_objects/Bench"]
+position = Vector2( -2.89044, -35.1558 )
+rotation = -0.3957
+texture = ExtResource( 34 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Static_objects/Bench"]
+position = Vector2( 20.7983, 13.6008 )
+rotation = -0.388172
+occluder = SubResource( 30 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Static_objects/Bench"]
+position = Vector2( -2.91762, -34.0465 )
+rotation = -0.401186
+shape = SubResource( 31 )
+
+[node name="Table" type="StaticBody2D" parent="Static_objects"]
+position = Vector2( 200.452, 508.583 )
+rotation = 1.07751
+
+[node name="Camp_tent_2" type="Sprite" parent="Static_objects/Table"]
+position = Vector2( -2.89044, -35.1558 )
+rotation = -0.3957
+texture = ExtResource( 35 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Static_objects/Table"]
+position = Vector2( 20.7983, 13.6008 )
+rotation = -0.388172
+occluder = SubResource( 32 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Static_objects/Table"]
+position = Vector2( -4.16322, -34.7162 )
+rotation = -0.401186
+shape = SubResource( 33 )
+
+[node name="Luggage_1" type="StaticBody2D" parent="Static_objects"]
+position = Vector2( 90.7199, 16.9094 )
+rotation = 1.07751
+
+[node name="Camp_tent_2" type="Sprite" parent="Static_objects/Luggage_1"]
+position = Vector2( -2.89044, -35.1558 )
+rotation = -0.3957
+texture = ExtResource( 36 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Static_objects/Luggage_1"]
+position = Vector2( -3.49353, -35.9618 )
+rotation = 1.20349
+shape = SubResource( 34 )
+
+[node name="Luggage_2" type="StaticBody2D" parent="Static_objects"]
+position = Vector2( 100.432, 32.6575 )
+rotation = 1.47186
+
+[node name="Camp_tent_2" type="Sprite" parent="Static_objects/Luggage_2"]
+position = Vector2( 0.232178, -1.05619 )
+rotation = -0.3957
+texture = ExtResource( 37 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Static_objects/Luggage_2"]
+position = Vector2( -0.746567, -2.86554 )
+rotation = 2.83343
+shape = SubResource( 34 )
+
 [node name="Pick-Up" type="Area2D" parent="."]
 modulate = Color( 0.458824, 0.32549, 0.0196078, 1 )
 position = Vector2( 310.114, 169.469 )
@@ -618,7 +866,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pick-Up"]
-shape = SubResource( 27 )
+shape = SubResource( 28 )
 
 [node name="Log Large" type="Sprite" parent="Pick-Up"]
 texture = ExtResource( 1 )
@@ -633,7 +881,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pick-Up2"]
-shape = SubResource( 27 )
+shape = SubResource( 28 )
 
 [node name="Log Large" type="Sprite" parent="Pick-Up2"]
 texture = ExtResource( 1 )
@@ -642,8 +890,21 @@ texture = ExtResource( 1 )
 script = ExtResource( 8 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+layer = 1
+scroll_base_scale = Vector2( 1.05, 1.05 )
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2( 209, -53.2 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+modulate = Color( 0.705882, 0.705882, 0.705882, 1 )
+position = Vector2( -40.8465, -9.88525 )
+rotation = 0.532595
+texture = ExtResource( 89 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="ParallaxBackground/ParallaxLayer/Sprite"]
+show_behind_parent = true
+occluder = SubResource( 46 )
 [connection signal="body_entered" from="FirePlace" to="FirePlace" method="_on_FirePlace_body_entered"]
 [connection signal="body_exited" from="FirePlace" to="FirePlace" method="_on_FirePlace_body_exited"]
 [connection signal="body_entered" from="Pick-Up" to="Pick-Up" method="_on_PickUp_body_entered"]
