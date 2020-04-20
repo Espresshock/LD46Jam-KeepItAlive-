@@ -631,7 +631,9 @@ position = Vector2( 352, 256 )
 color = Color( 0.0765, 0.119375, 0.15, 1 )
 
 [node name="PlayerCharacter" type="KinematicBody2D" parent="."]
-position = Vector2( 544, 224.397 )
+light_mask = 0
+position = Vector2( 640, 416 )
+z_index = 10
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
@@ -645,6 +647,7 @@ shape = SubResource( 17 )
 z_index = 1
 frames = SubResource( 18 )
 animation = "idle"
+frame = 10
 playing = true
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="PlayerCharacter/CharacterAnimations"]
@@ -664,10 +667,10 @@ drag_margin_bottom = 0.5
 
 [node name="NarrativeTextLabel" type="RichTextLabel" parent="PlayerCharacter/Camera2D"]
 modulate = Color( 0, 0, 0, 1 )
-margin_left = -288.0
-margin_top = 150.0
-margin_right = 312.0
-margin_bottom = 290.0
+margin_left = -309.0
+margin_top = 138.0
+margin_right = 344.0
+margin_bottom = 268.0
 scroll_active = false
 script = ExtResource( 7 )
 __meta__ = {
@@ -686,7 +689,7 @@ z_index = 1
 [node name="AnimatedSprite" type="AnimatedSprite" parent="People/Mike"]
 position = Vector2( 1.33698, -0.445648 )
 frames = SubResource( 20 )
-frame = 4
+frame = 2
 playing = true
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="People/Mike/AnimatedSprite"]
@@ -706,6 +709,7 @@ z_index = 1
 position = Vector2( 1.33698, -0.445648 )
 z_index = 1
 frames = SubResource( 22 )
+frame = 7
 playing = true
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="People/Ben/AnimatedSprite"]
@@ -726,7 +730,7 @@ z_index = 1
 position = Vector2( 1.33698, -0.445648 )
 z_index = 1
 frames = SubResource( 24 )
-frame = 7
+frame = 9
 playing = true
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="People/Sarah/AnimatedSprite"]
@@ -746,7 +750,6 @@ z_index = 1
 [node name="AnimatedSprite" type="AnimatedSprite" parent="People/Lilly"]
 position = Vector2( 1.33698, -0.445648 )
 frames = SubResource( 26 )
-frame = 10
 playing = true
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="People/Lilly/AnimatedSprite"]

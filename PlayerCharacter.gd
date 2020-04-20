@@ -5,9 +5,10 @@ var motionX = 0
 var motionY = 0
 var movementSpeed = 100
 
-
-var pickUpNode
+var overlappingPickUp
 var holdingPickUp
+var pickUpReference
+
 var playerNearCampfire
 var campfire
 
@@ -21,20 +22,19 @@ func _ready():
 	PlayerCharacter = get_node("/root")
 	textLabel = get_node("Camera2D/NarrativeTextLabel")
 	campfire = get_node("../FirePlace")
-	
+	holdingPickUp = false
 	pass # Replace with function body.
 
 
 func _process(_delta):
 	executeMotion()
-	updatePickUp(pickUpNode)
+	executePickUp()
 	selectNarative()
 	
 	pass
 
 
 func executeMotion():
-	
 	if(Input.is_action_pressed("ui_right")):
 		motionX = movementSpeed
 		$CharacterAnimations.rotation_degrees = 0
@@ -71,6 +71,13 @@ func executeMotion():
 	
 	pass
 
+func executePickUp():
+	if(Input.is_action_just_pressed("ui_select") && overlappingPickUp):
+		pickUp(pickUpReference)
+	elif(holdingPickUp):
+		updatePickUp(pickUpReference)
+	pass
+
 func selectNarative():
 	if(chooseNarrativeOption):
 		if(Input.is_action_just_pressed("PressKey1")):
@@ -89,7 +96,6 @@ func pickUp(pickUpTarget):
 		pickUpTarget.get_parent().remove_child(pickUpTarget)
 		PlayerCharacter.add_child(pickUpTarget)
 		holdingPickUp = true
-		pickUpNode = pickUpTarget
 	elif(holdingPickUp && playerNearCampfire):
 		pickUpTarget.get_parent().remove_child(pickUpTarget)
 		holdingPickUp = false
@@ -98,5 +104,5 @@ func pickUp(pickUpTarget):
 	
 func updatePickUp(target):
 	if(holdingPickUp):
-		target.set_transform(Transform2D(get_transform()))
+		target.set_transform(Transform2D(self.get_transform()))
 	pass
