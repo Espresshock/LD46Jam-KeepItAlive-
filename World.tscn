@@ -597,7 +597,6 @@ __meta__ = {
 scale = Vector2( 1.4, 1.4 )
 z_index = 1
 frames = SubResource( 12 )
-frame = 3
 playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="FirePlace/fireAnimationNode"]
@@ -681,21 +680,22 @@ __meta__ = {
 }
 
 [node name="TextureRect" type="TextureRect" parent="PlayerCharacter/Camera2D/ParallaxBackground/Control"]
-margin_left = 192.0
-margin_top = 448.0
-margin_right = 1616.0
-margin_bottom = 804.0
-rect_scale = Vector2( 0.5, 0.6 )
+margin_left = 95.0
+margin_top = 435.0
+margin_right = 1519.0
+margin_bottom = 791.0
+rect_scale = Vector2( 0.6, 0.6 )
 texture = ExtResource( 32 )
+stretch_mode = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="NarrativeTextLabel" type="RichTextLabel" parent="PlayerCharacter/Camera2D/ParallaxBackground/Control"]
 modulate = Color( 0, 0, 0, 1 )
-margin_left = 134.0
+margin_left = 139.0
 margin_top = 470.0
-margin_right = 897.0
+margin_right = 902.0
 margin_bottom = 595.0
 custom_fonts/normal_font = SubResource( 20 )
 scroll_active = false
@@ -736,7 +736,7 @@ z_index = 1
 position = Vector2( 1.33698, -0.445648 )
 z_index = 1
 frames = SubResource( 23 )
-frame = 11
+frame = 14
 playing = true
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="People/Ben/AnimatedSprite"]
@@ -757,6 +757,7 @@ z_index = 1
 position = Vector2( 1.33698, -0.445648 )
 z_index = 1
 frames = SubResource( 25 )
+frame = 10
 playing = true
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="People/Sarah/AnimatedSprite"]
@@ -776,7 +777,7 @@ z_index = 1
 [node name="AnimatedSprite" type="AnimatedSprite" parent="People/Lilly"]
 position = Vector2( 1.33698, -0.445648 )
 frames = SubResource( 27 )
-frame = 12
+frame = 16
 playing = true
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="People/Lilly/AnimatedSprite"]

@@ -9,7 +9,7 @@ var textLabelReference
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	textLabelReference = get_node("../PlayerCharacter/Camera2D/Control/ParallaxBackground/NarrativeTextLabel")
+	textLabelReference = get_node("../PlayerCharacter/Camera2D/ParallaxBackground/Control/NarrativeTextLabel")
 	pass # Replace with function body.
 
 
@@ -30,5 +30,5 @@ func checkPeopleDead():
 
 func deletePerson(person):
 	var personRef = get_node(person)
-	personRef.visible(false)
+	personRef.visible = false
 	pass

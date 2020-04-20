@@ -20,7 +20,7 @@ var textLabel = RichTextLabel
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	PlayerCharacter = get_node("/root")
-	textLabel = get_node("Camera2D/Control/ParallaxBackground/NarrativeTextLabel")
+	textLabel = get_node("Camera2D/ParallaxBackground/Control/NarrativeTextLabel")
 	campfire = get_node("../FirePlace")
 	holdingPickUp = false
 	pass # Replace with function body.
@@ -30,15 +30,15 @@ func _process(_delta):
 	executeMotion()
 	executePickUp()
 	selectNarative()
-	if(textLabel.playerTurnTracker >= 3):
+	if(textLabel.playerTurnTracker >= 4):
 		campfire.campfireTimer()
-	elif(!textLabel.playerTurnTracker >= 3):
+	elif(!textLabel.playerTurnTracker >= 4):
 		campfire.campFireAutoBurn()
 	pass
 
 
 func executeMotion():
-	if(textLabel.playerTurnTracker >= 3):
+	if(textLabel.playerTurnTracker >= 4):
 		if(Input.is_action_pressed("ui_right")):
 			motionX = movementSpeed
 			$CharacterAnimations.rotation_degrees = 0
