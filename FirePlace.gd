@@ -31,6 +31,7 @@ func _on_timer_timeout():
 	get_node("fireAnimationNode/Fire").enabled = false
 	get_node("fireAnimationNode/AnimatedFireSprite").visible = false
 	get_node("FireParticles").emitting = false
+	get_node("Fire crackling").playing = false
 	newLog = true
 	pass
 	
