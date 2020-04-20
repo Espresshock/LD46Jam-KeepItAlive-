@@ -107,7 +107,7 @@ func _ready():
 	textTimer.connect("timeout", self, "on_textTimer_timeOut")
 	add_child(textTimer)
 	textTimer.start(sentenceTime)
-	playerCharacterReference = get_node("../../.")
+	playerCharacterReference = get_node("../../..")
 	pass # Replace with function body.
 
 #func _process(delta):
@@ -123,7 +123,6 @@ func on_textTimer_timeOut():
 
 func updateText(Speaker, newText):
 	set_text(Speaker)
-	newline()
 	newline()
 	add_text(newText)
 	pass

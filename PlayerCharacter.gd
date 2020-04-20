@@ -20,7 +20,7 @@ var textLabel = RichTextLabel
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	PlayerCharacter = get_node("/root")
-	textLabel = get_node("Camera2D/NarrativeTextLabel")
+	textLabel = get_node("../Control/NarrativeTextLabel")
 	campfire = get_node("../FirePlace")
 	holdingPickUp = false
 	pass # Replace with function body.
