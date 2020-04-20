@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/aac_Ld46creep.ogg-4b9ce87a329680c37fd9e32edeb9e620.oggstr"
+
+[deps]
+
+source_file="res://Assets/Objects/aac_Ld46creep.ogg"
+dest_files=[ "res://.import/aac_Ld46creep.ogg-4b9ce87a329680c37fd9e32edeb9e620.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

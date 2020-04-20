@@ -100,7 +100,7 @@ var playerResponseDictionary = {1 : ["1. The friends however were not scared, an
  12: ["1. I am worried that this is going too far…", "2. I want to stop this stupid game… ", "3. "]}
 
 var textTimer
-var sentenceTime = 5	
+var sentenceTime = 0.5	
 
 func _ready():
 	textTimer = Timer.new()
