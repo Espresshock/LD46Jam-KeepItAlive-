@@ -597,6 +597,7 @@ __meta__ = {
 scale = Vector2( 1.4, 1.4 )
 z_index = 1
 frames = SubResource( 12 )
+frame = 1
 playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="FirePlace/fireAnimationNode"]
@@ -650,7 +651,6 @@ shape = SubResource( 17 )
 z_index = 1
 frames = SubResource( 18 )
 animation = "idle"
-frame = 2
 playing = true
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="PlayerCharacter/CharacterAnimations"]
@@ -717,6 +717,7 @@ z_index = 1
 [node name="AnimatedSprite" type="AnimatedSprite" parent="People/Mike"]
 position = Vector2( 1.33701, -0.445679 )
 frames = SubResource( 21 )
+frame = 4
 playing = true
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="People/Mike/AnimatedSprite"]
@@ -736,7 +737,7 @@ z_index = 1
 position = Vector2( 1.33698, -0.445648 )
 z_index = 1
 frames = SubResource( 23 )
-frame = 14
+frame = 12
 playing = true
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="People/Ben/AnimatedSprite"]
@@ -757,7 +758,7 @@ z_index = 1
 position = Vector2( 1.33698, -0.445648 )
 z_index = 1
 frames = SubResource( 25 )
-frame = 10
+frame = 1
 playing = true
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="People/Sarah/AnimatedSprite"]
@@ -777,7 +778,7 @@ z_index = 1
 [node name="AnimatedSprite" type="AnimatedSprite" parent="People/Lilly"]
 position = Vector2( 1.33698, -0.445648 )
 frames = SubResource( 27 )
-frame = 16
+frame = 13
 playing = true
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="People/Lilly/AnimatedSprite"]

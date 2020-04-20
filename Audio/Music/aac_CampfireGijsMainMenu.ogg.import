@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/aac_CampfireGijsMainMenu.ogg-998032ab5d0fc7f76d1c50dc61d6b6a8.oggstr"
+
+[deps]
+
+source_file="res://Audio/Music/aac_CampfireGijsMainMenu.ogg"
+dest_files=[ "res://.import/aac_CampfireGijsMainMenu.ogg-998032ab5d0fc7f76d1c50dc61d6b6a8.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

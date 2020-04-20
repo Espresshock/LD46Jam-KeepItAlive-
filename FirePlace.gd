@@ -64,6 +64,8 @@ func campfireTimer():
 		timer.set_wait_time(burnTime - currentSecond)
 		timer.start()
 		newLog = false
+	elif(burnTime == 0):
+		get_tree().change_scene("res://FailState.tscn")
 	pass
 
 func setCampfireSize():

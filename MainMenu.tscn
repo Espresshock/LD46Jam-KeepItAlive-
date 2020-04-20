@@ -1,0 +1,62 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Assets/InGame_Menu.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Fonts/Vernal Park Regular.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Audio/Music/aac_CampfireGijsMainMenu.ogg" type="AudioStream" id=3]
+[ext_resource path="res://MainMenu.gd" type="Script" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 70
+font_data = ExtResource( 2 )
+
+[node name="MainMenu" type="Control"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -512.0
+margin_top = -300.0
+margin_right = 512.0
+margin_bottom = 300.0
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_left = 310.0
+margin_top = 10.0
+margin_right = 722.0
+margin_bottom = 583.0
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TextureRect"]
+modulate = Color( 0, 0, 0, 1 )
+margin_left = 70.0
+margin_top = 137.0
+margin_right = 355.0
+margin_bottom = 237.0
+custom_fonts/normal_font = SubResource( 1 )
+text = "1. Play Game"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="TextureRect"]
+modulate = Color( 0, 0, 0, 1 )
+margin_left = 77.0
+margin_top = 315.0
+margin_right = 361.0
+margin_bottom = 421.0
+custom_fonts/normal_font = SubResource( 1 )
+text = "2. Quit Game"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+autoplay = true
