@@ -20,7 +20,7 @@ var textLabel = RichTextLabel
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	PlayerCharacter = get_node("/root")
-	textLabel = get_node("../Control/NarrativeTextLabel")
+	textLabel = get_node("Camera2D/Control/ParallaxBackground/NarrativeTextLabel")
 	campfire = get_node("../FirePlace")
 	holdingPickUp = false
 	pass # Replace with function body.
@@ -30,45 +30,48 @@ func _process(_delta):
 	executeMotion()
 	executePickUp()
 	selectNarative()
-	
+	if(textLabel.playerTurnTracker >= 3):
+		campfire.campfireTimer()
+	elif(!textLabel.playerTurnTracker >= 3):
+		campfire.campFireAutoBurn()
 	pass
 
 
 func executeMotion():
-	if(Input.is_action_pressed("ui_right")):
-		motionX = movementSpeed
-		$CharacterAnimations.rotation_degrees = 0
-	elif(Input.is_action_pressed("ui_left")):
-		motionX = -movementSpeed
-		$CharacterAnimations.rotation_degrees = 180
-	else:
-		motionX = 0
-	
-	if(Input.is_action_pressed("ui_up")):
-		motionY = -movementSpeed
-		$CharacterAnimations.rotation_degrees = -90
-	elif(Input.is_action_pressed("ui_down")):
-		motionY = movementSpeed	
-		$CharacterAnimations.rotation_degrees = 90
-	else:
-		motionY = 0
+	if(textLabel.playerTurnTracker >= 3):
+		if(Input.is_action_pressed("ui_right")):
+			motionX = movementSpeed
+			$CharacterAnimations.rotation_degrees = 0
+		elif(Input.is_action_pressed("ui_left")):
+			motionX = -movementSpeed
+			$CharacterAnimations.rotation_degrees = 180
+		else:
+			motionX = 0
 		
-	motion = Vector2(motionX, motionY)
-	
-	if(motion == Vector2(0,0)):
-		$CharacterAnimations.play("idle")
-	elif(motion == Vector2(movementSpeed,-movementSpeed)):
-		$CharacterAnimations.rotation_degrees = -45
-	elif(motion == Vector2(movementSpeed,movementSpeed)):
-		$CharacterAnimations.rotation_degrees = 45
-	elif(motion == Vector2(-movementSpeed,movementSpeed)):
-		$CharacterAnimations.rotation_degrees = 135
-	elif(motion == Vector2(-movementSpeed,-movementSpeed)):
-		$CharacterAnimations.rotation_degrees = -135
-	else:
-		$CharacterAnimations.play("walking")
-	return move_and_slide(motion)
-	
+		if(Input.is_action_pressed("ui_up")):
+			motionY = -movementSpeed
+			$CharacterAnimations.rotation_degrees = -90
+		elif(Input.is_action_pressed("ui_down")):
+			motionY = movementSpeed	
+			$CharacterAnimations.rotation_degrees = 90
+		else:
+			motionY = 0
+			
+		motion = Vector2(motionX, motionY)
+		
+		if(motion == Vector2(0,0)):
+			$CharacterAnimations.play("idle")
+		elif(motion == Vector2(movementSpeed,-movementSpeed)):
+			$CharacterAnimations.rotation_degrees = -45
+		elif(motion == Vector2(movementSpeed,movementSpeed)):
+			$CharacterAnimations.rotation_degrees = 45
+		elif(motion == Vector2(-movementSpeed,movementSpeed)):
+			$CharacterAnimations.rotation_degrees = 135
+		elif(motion == Vector2(-movementSpeed,-movementSpeed)):
+			$CharacterAnimations.rotation_degrees = -135
+		else:
+			$CharacterAnimations.play("walking")
+		return move_and_slide(motion)
 	pass
 
 func executePickUp():

@@ -23,7 +23,6 @@ func _ready():
 	pass # Replace with function body.
 
 func _process(_delta):
-	campfireTimer()
 	pass
 
 func _on_timer_timeout():
@@ -80,3 +79,8 @@ func setCampfireSize():
 		fireSprite.set_scale(Vector2(1, 1))
 	pass
 
+func campFireAutoBurn():
+	var fireScaleAnimation = get_node("fireAnimationNode/AnimationPlayer")
+	var currentSecond = fireScaleAnimation.get("current_animation_position")
+	fireScaleAnimation.seek(currentSecond -.5,true)
+	pass

@@ -1,4 +1,4 @@
-[gd_scene load_steps=143 format=2]
+[gd_scene load_steps=144 format=2]
 
 [ext_resource path="res://Assets/Objects/Log_large.png" type="Texture" id=1]
 [ext_resource path="res://PlayerCharacter.gd" type="Script" id=2]
@@ -100,6 +100,7 @@
 [ext_resource path="res://Audio/Sounds/350757__aerror__campfire.ogg" type="AudioStream" id=98]
 [ext_resource path="res://Audio/Sounds/Woods.ogg" type="AudioStream" id=99]
 [ext_resource path="res://Assets/Objects/map_edge.png" type="Texture" id=100]
+[ext_resource path="res://People.gd" type="Script" id=101]
 [ext_resource path="res://Assets/Fonts/Vernal Park Regular.ttf" type="DynamicFontData" id=102]
 
 [sub_resource type="GDScript" id=1]
@@ -451,7 +452,7 @@ cull_mode = 2
 polygon = PoolVector2Array( -6.56018, -17.2315, -6.10828, 17.5625, 4.73657, 17.1107, 3.83289, -17.2315 )
 
 [sub_resource type="DynamicFont" id=20]
-size = 25
+size = 22
 font_data = ExtResource( 102 )
 
 [sub_resource type="SpriteFrames" id=21]
@@ -635,7 +636,7 @@ color = Color( 0.0765, 0.119375, 0.15, 1 )
 
 [node name="PlayerCharacter" type="KinematicBody2D" parent="."]
 light_mask = 0
-position = Vector2( 640, 416 )
+position = Vector2( 183, 246 )
 z_index = 10
 script = ExtResource( 2 )
 __meta__ = {
@@ -692,10 +693,10 @@ __meta__ = {
 
 [node name="NarrativeTextLabel" type="RichTextLabel" parent="PlayerCharacter/Camera2D/ParallaxBackground/Control"]
 modulate = Color( 0, 0, 0, 1 )
-margin_left = 232.0
-margin_top = 485.0
-margin_right = 863.0
-margin_bottom = 610.0
+margin_left = 134.0
+margin_top = 470.0
+margin_right = 897.0
+margin_bottom = 595.0
 custom_fonts/normal_font = SubResource( 20 )
 scroll_active = false
 script = ExtResource( 7 )
@@ -706,6 +707,7 @@ __meta__ = {
 [node name="People" type="Node2D" parent="."]
 position = Vector2( 423.51, 48.68 )
 rotation = 0.785398
+script = ExtResource( 101 )
 
 [node name="Mike" type="KinematicBody2D" parent="People"]
 position = Vector2( 148.294, 367.219 )
@@ -713,7 +715,7 @@ rotation = -1.56509
 z_index = 1
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="People/Mike"]
-position = Vector2( 1.33698, -0.445648 )
+position = Vector2( 1.33701, -0.445679 )
 frames = SubResource( 21 )
 playing = true
 
