@@ -31,7 +31,7 @@
 [ext_resource path="res://gradient & curves/Fire gradient.tres" type="Gradient" id=29]
 [ext_resource path="res://Assets/Objects/Camp_tent_2.png" type="Texture" id=30]
 [ext_resource path="res://Assets/Objects/Camp_tent_1.png" type="Texture" id=31]
-[ext_resource path="res://NarrativeAudioSystem.gd" type="Script" id=32]
+[ext_resource path="res://Audio/Music/aac_Ld46creep.ogg" type="AudioStream" id=32]
 [ext_resource path="res://Assets/Objects/Camp_log.png" type="Texture" id=33]
 [ext_resource path="res://Assets/Objects/Camp_bench.png" type="Texture" id=34]
 [ext_resource path="res://Assets/Objects/Camp_Table.png" type="Texture" id=35]
@@ -553,10 +553,6 @@ tile_data = PoolIntArray( -1114128, 8, 0, -1114127, 5, 0, -1114126, 0, 0, -11141
 position = Vector2( 352, 256 )
 script = ExtResource( 58 )
 
-[node name="NarrativeAudioSystem" type="AudioStreamPlayer2D" parent="FirePlace"]
-position = Vector2( -352, -256 )
-script = ExtResource( 32 )
-
 [node name="FireParticles" type="Particles2D" parent="FirePlace"]
 position = Vector2( 1.33099, 1.17786 )
 amount = 500
@@ -595,7 +591,10 @@ __meta__ = {
 scale = Vector2( 1.4, 1.4 )
 z_index = 1
 frames = SubResource( 12 )
+<<<<<<< HEAD
 frame = 1
+=======
+>>>>>>> 4b615ba74b13349df700f540e4d66223190e07b1
 playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="FirePlace/fireAnimationNode"]
@@ -633,7 +632,9 @@ position = Vector2( 352, 256 )
 color = Color( 0.0765, 0.119375, 0.15, 1 )
 
 [node name="PlayerCharacter" type="KinematicBody2D" parent="."]
-position = Vector2( 544, 224.397 )
+light_mask = 0
+position = Vector2( 640, 416 )
+z_index = 10
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
@@ -647,7 +648,11 @@ shape = SubResource( 17 )
 z_index = 1
 frames = SubResource( 18 )
 animation = "idle"
+<<<<<<< HEAD
 frame = 9
+=======
+frame = 2
+>>>>>>> 4b615ba74b13349df700f540e4d66223190e07b1
 playing = true
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="PlayerCharacter/CharacterAnimations"]
@@ -667,10 +672,10 @@ drag_margin_bottom = 0.5
 
 [node name="NarrativeTextLabel" type="RichTextLabel" parent="PlayerCharacter/Camera2D"]
 modulate = Color( 0, 0, 0, 1 )
-margin_left = -288.0
-margin_top = 150.0
-margin_right = 312.0
-margin_bottom = 290.0
+margin_left = -309.0
+margin_top = 138.0
+margin_right = 344.0
+margin_bottom = 268.0
 scroll_active = false
 script = ExtResource( 7 )
 __meta__ = {
@@ -689,7 +694,10 @@ z_index = 1
 [node name="AnimatedSprite" type="AnimatedSprite" parent="People/Mike"]
 position = Vector2( 1.33698, -0.445648 )
 frames = SubResource( 20 )
+<<<<<<< HEAD
 frame = 1
+=======
+>>>>>>> 4b615ba74b13349df700f540e4d66223190e07b1
 playing = true
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="People/Mike/AnimatedSprite"]
@@ -709,7 +717,11 @@ z_index = 1
 position = Vector2( 1.33698, -0.445648 )
 z_index = 1
 frames = SubResource( 22 )
+<<<<<<< HEAD
 frame = 12
+=======
+frame = 14
+>>>>>>> 4b615ba74b13349df700f540e4d66223190e07b1
 playing = true
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="People/Ben/AnimatedSprite"]
@@ -730,7 +742,11 @@ z_index = 1
 position = Vector2( 1.33698, -0.445648 )
 z_index = 1
 frames = SubResource( 24 )
+<<<<<<< HEAD
 frame = 2
+=======
+frame = 11
+>>>>>>> 4b615ba74b13349df700f540e4d66223190e07b1
 playing = true
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="People/Sarah/AnimatedSprite"]
@@ -750,7 +766,11 @@ z_index = 1
 [node name="AnimatedSprite" type="AnimatedSprite" parent="People/Lilly"]
 position = Vector2( 1.33698, -0.445648 )
 frames = SubResource( 26 )
+<<<<<<< HEAD
 frame = 6
+=======
+frame = 8
+>>>>>>> 4b615ba74b13349df700f540e4d66223190e07b1
 playing = true
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="People/Lilly/AnimatedSprite"]
@@ -1777,6 +1797,7 @@ texture = ExtResource( 96 )
 show_behind_parent = true
 occluder = SubResource( 40 )
 
+<<<<<<< HEAD
 [node name="Tree9" type="Sprite" parent="Parallax Trees layer 3/ParallaxLayer"]
 modulate = Color( 0.270588, 0.270588, 0.270588, 1 )
 light_mask = 2
@@ -1986,6 +2007,31 @@ position = Vector2( 147.234, 307.912 )
 rotation = 1.5708
 scale = Vector2( 1.43368, 1.43368 )
 texture = ExtResource( 100 )
+=======
+[node name="CreepyAudio" type="AudioStreamPlayer2D" parent="."]
+position = Vector2( 352, -512 )
+stream = ExtResource( 32 )
+autoplay = true
+attenuation = 5.09824
+
+[node name="CreepyAudio2" type="AudioStreamPlayer2D" parent="."]
+position = Vector2( 352, 1152 )
+stream = ExtResource( 32 )
+autoplay = true
+attenuation = 5.09824
+
+[node name="CreepyAudio4" type="AudioStreamPlayer2D" parent="."]
+position = Vector2( 1664, 256 )
+stream = ExtResource( 32 )
+autoplay = true
+attenuation = 5.09824
+
+[node name="CreepyAudio3" type="AudioStreamPlayer2D" parent="."]
+position = Vector2( -768, 256 )
+stream = ExtResource( 32 )
+autoplay = true
+attenuation = 5.09824
+>>>>>>> 4b615ba74b13349df700f540e4d66223190e07b1
 [connection signal="body_entered" from="FirePlace" to="FirePlace" method="_on_FirePlace_body_entered"]
 [connection signal="body_exited" from="FirePlace" to="FirePlace" method="_on_FirePlace_body_exited"]
 [connection signal="body_entered" from="WoodLarge Pick-Up" to="WoodLarge Pick-Up" method="_on_PickUp_body_entered"]
