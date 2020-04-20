@@ -16,7 +16,7 @@ func _ready():
 #	campfire = 4
 	timer = Timer.new()
 	timer.connect("timeout", self, "_on_timer_timeout")
-	burnTime = 30.0
+	burnTime = 60.0
 	fireSprite = get_node("fireAnimationNode/AnimatedFireSprite")
 	newLog = true
 	add_child(timer)
