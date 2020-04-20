@@ -1,4 +1,4 @@
-[gd_scene load_steps=142 format=2]
+[gd_scene load_steps=143 format=2]
 
 [ext_resource path="res://Assets/Objects/Log_large.png" type="Texture" id=1]
 [ext_resource path="res://PlayerCharacter.gd" type="Script" id=2]
@@ -31,6 +31,7 @@
 [ext_resource path="res://gradient & curves/Fire gradient.tres" type="Gradient" id=29]
 [ext_resource path="res://Assets/Objects/Camp_tent_2.png" type="Texture" id=30]
 [ext_resource path="res://Assets/Objects/Camp_tent_1.png" type="Texture" id=31]
+[ext_resource path="res://Assets/Text_Box.png" type="Texture" id=32]
 [ext_resource path="res://Assets/Objects/Camp_log.png" type="Texture" id=33]
 [ext_resource path="res://Assets/Objects/Camp_bench.png" type="Texture" id=34]
 [ext_resource path="res://Assets/Objects/Camp_Table.png" type="Texture" id=35]
@@ -649,7 +650,7 @@ shape = SubResource( 17 )
 z_index = 1
 frames = SubResource( 18 )
 animation = "idle"
-frame = 5
+frame = 2
 playing = true
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="PlayerCharacter/CharacterAnimations"]
@@ -667,30 +668,29 @@ drag_margin_top = 0.5
 drag_margin_right = 0.5
 drag_margin_bottom = 0.5
 
-[node name="Control" type="Control" parent="PlayerCharacter/Camera2D"]
-margin_left = -640.0
-margin_top = -416.0
-margin_right = -600.0
-margin_bottom = -376.0
+[node name="ParallaxBackground" type="ParallaxBackground" parent="PlayerCharacter/Camera2D"]
+layer = 4
+scroll_base_scale = Vector2( 0.5, 0.5 )
+
+[node name="Control" type="Control" parent="PlayerCharacter/Camera2D/ParallaxBackground"]
+margin_right = 1022.0
+margin_bottom = 608.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="PlayerCharacter/Camera2D/Control"]
-layer = 4
-
-[node name="TextureRect" type="TextureRect" parent="PlayerCharacter/Camera2D/Control/ParallaxBackground"]
+[node name="TextureRect" type="TextureRect" parent="PlayerCharacter/Camera2D/ParallaxBackground/Control"]
 margin_left = 192.0
 margin_top = 448.0
 margin_right = 1616.0
 margin_bottom = 804.0
 rect_scale = Vector2( 0.5, 0.6 )
-texture = ExtResource( 100 )
+texture = ExtResource( 32 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="NarrativeTextLabel" type="RichTextLabel" parent="PlayerCharacter/Camera2D/Control/ParallaxBackground"]
+[node name="NarrativeTextLabel" type="RichTextLabel" parent="PlayerCharacter/Camera2D/ParallaxBackground/Control"]
 modulate = Color( 0, 0, 0, 1 )
 margin_left = 232.0
 margin_top = 485.0
@@ -715,7 +715,6 @@ z_index = 1
 [node name="AnimatedSprite" type="AnimatedSprite" parent="People/Mike"]
 position = Vector2( 1.33698, -0.445648 )
 frames = SubResource( 21 )
-frame = 3
 playing = true
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="People/Mike/AnimatedSprite"]
@@ -735,7 +734,7 @@ z_index = 1
 position = Vector2( 1.33698, -0.445648 )
 z_index = 1
 frames = SubResource( 23 )
-frame = 2
+frame = 11
 playing = true
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="People/Ben/AnimatedSprite"]
@@ -756,7 +755,6 @@ z_index = 1
 position = Vector2( 1.33698, -0.445648 )
 z_index = 1
 frames = SubResource( 25 )
-frame = 2
 playing = true
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="People/Sarah/AnimatedSprite"]
@@ -776,6 +774,7 @@ z_index = 1
 [node name="AnimatedSprite" type="AnimatedSprite" parent="People/Lilly"]
 position = Vector2( 1.33698, -0.445648 )
 frames = SubResource( 27 )
+frame = 12
 playing = true
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="People/Lilly/AnimatedSprite"]
@@ -1999,7 +1998,7 @@ show_behind_parent = true
 occluder = SubResource( 41 )
 
 [node name="World_edge" type="ParallaxBackground" parent="."]
-layer = 4
+layer = 3
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="World_edge"]
 modulate = Color( 0.501961, 0.905882, 1, 1 )
