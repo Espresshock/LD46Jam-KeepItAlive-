@@ -1,4 +1,4 @@
-[gd_scene load_steps=142 format=2]
+[gd_scene load_steps=144 format=2]
 
 [ext_resource path="res://Assets/Objects/Log_large.png" type="Texture" id=1]
 [ext_resource path="res://PlayerCharacter.gd" type="Script" id=2]
@@ -31,6 +31,7 @@
 [ext_resource path="res://gradient & curves/Fire gradient.tres" type="Gradient" id=29]
 [ext_resource path="res://Assets/Objects/Camp_tent_2.png" type="Texture" id=30]
 [ext_resource path="res://Assets/Objects/Camp_tent_1.png" type="Texture" id=31]
+[ext_resource path="res://Assets/Text_Box.png" type="Texture" id=32]
 [ext_resource path="res://Assets/Objects/Camp_log.png" type="Texture" id=33]
 [ext_resource path="res://Assets/Objects/Camp_bench.png" type="Texture" id=34]
 [ext_resource path="res://Assets/Objects/Camp_Table.png" type="Texture" id=35]
@@ -99,6 +100,7 @@
 [ext_resource path="res://Audio/Sounds/350757__aerror__campfire.ogg" type="AudioStream" id=98]
 [ext_resource path="res://Audio/Sounds/Woods.ogg" type="AudioStream" id=99]
 [ext_resource path="res://Assets/Objects/map_edge.png" type="Texture" id=100]
+[ext_resource path="res://People.gd" type="Script" id=101]
 [ext_resource path="res://Assets/Fonts/Vernal Park Regular.ttf" type="DynamicFontData" id=102]
 
 [sub_resource type="GDScript" id=1]
@@ -450,7 +452,7 @@ cull_mode = 2
 polygon = PoolVector2Array( -6.56018, -17.2315, -6.10828, 17.5625, 4.73657, 17.1107, 3.83289, -17.2315 )
 
 [sub_resource type="DynamicFont" id=20]
-size = 25
+size = 22
 font_data = ExtResource( 102 )
 
 [sub_resource type="SpriteFrames" id=21]
@@ -634,7 +636,7 @@ color = Color( 0.0765, 0.119375, 0.15, 1 )
 
 [node name="PlayerCharacter" type="KinematicBody2D" parent="."]
 light_mask = 0
-position = Vector2( 640, 416 )
+position = Vector2( 183, 246 )
 z_index = 10
 script = ExtResource( 2 )
 __meta__ = {
@@ -649,7 +651,7 @@ shape = SubResource( 17 )
 z_index = 1
 frames = SubResource( 18 )
 animation = "idle"
-frame = 5
+frame = 3
 playing = true
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="PlayerCharacter/CharacterAnimations"]
@@ -680,22 +682,22 @@ __meta__ = {
 layer = 4
 
 [node name="TextureRect" type="TextureRect" parent="PlayerCharacter/Camera2D/Control/ParallaxBackground"]
-margin_left = 192.0
-margin_top = 448.0
-margin_right = 1616.0
-margin_bottom = 804.0
-rect_scale = Vector2( 0.5, 0.6 )
-texture = ExtResource( 100 )
+margin_left = 80.0
+margin_top = 433.0
+margin_right = 1504.0
+margin_bottom = 789.0
+rect_scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 32 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="NarrativeTextLabel" type="RichTextLabel" parent="PlayerCharacter/Camera2D/Control/ParallaxBackground"]
 modulate = Color( 0, 0, 0, 1 )
-margin_left = 232.0
-margin_top = 485.0
-margin_right = 863.0
-margin_bottom = 610.0
+margin_left = 134.0
+margin_top = 470.0
+margin_right = 897.0
+margin_bottom = 595.0
 custom_fonts/normal_font = SubResource( 20 )
 scroll_active = false
 script = ExtResource( 7 )
@@ -706,6 +708,7 @@ __meta__ = {
 [node name="People" type="Node2D" parent="."]
 position = Vector2( 423.51, 48.68 )
 rotation = 0.785398
+script = ExtResource( 101 )
 
 [node name="Mike" type="KinematicBody2D" parent="People"]
 position = Vector2( 148.294, 367.219 )
@@ -713,9 +716,9 @@ rotation = -1.56509
 z_index = 1
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="People/Mike"]
-position = Vector2( 1.33698, -0.445648 )
+position = Vector2( 1.33701, -0.445679 )
 frames = SubResource( 21 )
-frame = 3
+frame = 1
 playing = true
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="People/Mike/AnimatedSprite"]
@@ -735,7 +738,7 @@ z_index = 1
 position = Vector2( 1.33698, -0.445648 )
 z_index = 1
 frames = SubResource( 23 )
-frame = 2
+frame = 12
 playing = true
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="People/Ben/AnimatedSprite"]
@@ -756,7 +759,7 @@ z_index = 1
 position = Vector2( 1.33698, -0.445648 )
 z_index = 1
 frames = SubResource( 25 )
-frame = 2
+frame = 7
 playing = true
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="People/Sarah/AnimatedSprite"]
@@ -776,6 +779,7 @@ z_index = 1
 [node name="AnimatedSprite" type="AnimatedSprite" parent="People/Lilly"]
 position = Vector2( 1.33698, -0.445648 )
 frames = SubResource( 27 )
+frame = 12
 playing = true
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="People/Lilly/AnimatedSprite"]

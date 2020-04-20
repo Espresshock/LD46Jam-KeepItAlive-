@@ -53,7 +53,7 @@ var speakerDictionary = {"Lilly": ["We are going to play a game, it's called “
  "Once turned to its will.. there was nothing in their heads.. but KILL.",
  "Mike does the tent!",
  "Lurking between the trees the ghost saw the group, enjoying their night in the forest…",
- "But she just stood up to grab a marshmallow from Sarah, and the ghost to misses her by a hair…",
+ "But she just stood up to grab a marshmallow from Sarah, and the ghost missed her by a hair…",
  "Suddenly the ghost saw that Sarah stood up and headed towards the edge of the campsite",
  "As Lilly disappeared into the shadows of the trees…",
  "The ghost started shifting around the campsite, looking for a good hiding place…",
@@ -89,7 +89,7 @@ var playerTurnTracker = 1
 var playerResponseDictionary = {1 : ["1. The friends however were not scared, and together nothing can hurt them!", "2. The group of friends were prepared and ready for an adventure..", "3. The group of friends were suspicious of every shadow and sound"],
  2 : ["1. I would also like a sausage please… As the friends were eating, they divided tasks for everyone's comfort...", "2. One of the friends suggested that they should divide tasks so the camp was kept in good condition for the night...", "One of the friends demanded the others to pick up a task or something bad would happen…"],
  3 : ["1. And then I will keep the fire alive!", "2. Ill go look for some wood", "3. I will brave the woods!... for timber"],
- 4 : ["1. The ghost tried to get as close as possible…", "2. The tall creepy ghost observed the group, figuring who was the weakest…", "3. The ghost could easily take them all out, one by one, without hesitation..."],
+ 4 : ["1. The ghost tried to get as close as possible…", "2. The tall creepy ghost observed the group, discovering who was weakest…", "3. The ghost could easily take them all out, one by one, without hesitation..."],
  5 : ["1. The ghost waited, and waited, for a moment he could enter a vulnerable person...", "2. Behind the slim trees the ghost waited for hours...", "3. Observing the group, his mouth started watering, the hunger was unbearable..."],
  6 : ["1. He waited until she was out of sight of the others…", "2. His claws at the ready, his stomach more hungry than ever…", "3. He prepared himself, this one would be quick…"],
  7 : ["1. He entered her mind, quicker than ever before...", "2. The Ghost slid into her skull, feasted on her brains and soul, this was the only meal he had had in a long while…", "3. Without a doubt he absorbed her and made sure there was nothing left of her to find, not a hair, not a nail…"],
@@ -107,7 +107,7 @@ func _ready():
 	textTimer.connect("timeout", self, "on_textTimer_timeOut")
 	add_child(textTimer)
 	textTimer.start(sentenceTime)
-	playerCharacterReference = get_node("../../..")
+	playerCharacterReference = get_node("../../../..")
 	pass # Replace with function body.
 
 #func _process(delta):
